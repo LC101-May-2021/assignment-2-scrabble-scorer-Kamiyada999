@@ -56,22 +56,22 @@ function simpleScore(word){
 function vowelBonusScore(word){
    word = word.toUpperCase();
   //simpleScoreArray = word.split('');
-  letterPoints = 0;
+  vPoints = 0;
   for (let i = 0; i < word.length; i++)
-  if (word[i] === "A" || "E" || "I" || "O" || "U") {
-    letterPoints  = letterPoints + 3;
+  if (word[i] === "A" || word[i] === "E" || word[i] === "I" || word[i] === "O" || word[i] === "U") {
+    vPoints  = vPoints + 3;
   } else {
-    letterPoints = letterPoints + 1;
+    vPoints = vPoints + 1;
   }
-  return letterPoints;
+  return vPoints;
 }
   function scrabbleScore(word){
   word = word.toLowerCase();
-  letterPoints = 0;
+  sPoints = 0;
   for(let i = 0; i<word.length; i++){
-    letterPoints += newPointStructure[word[i]]
+    sPoints += newPointStructure[word[i]]
   }
-  return letterPoints
+  return sPoints
 }
 
 const scoringAlgorithms = [
