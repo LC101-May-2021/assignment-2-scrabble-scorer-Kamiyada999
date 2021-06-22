@@ -49,13 +49,13 @@ function simpleScore(word){
 
 function vowelBonusScore(word){
    word = word.toUpperCase();
-  simpleScoreArray = word.split('');
+  //simpleScoreArray = word.split('');
   letterPoints = 0;
-  for (let i = 0; i < vowelBonusScore.length; i++)
-  if (vowelBonusScore = "A" || "E" || "I" || "O" || "U") {
-    letterPoints =+ 3;
+  for (let i = 0; i < word.length; i++)
+  if (word[i] === "A" || "E" || "I" || "O" || "U") {
+    letterPoints + 3;
   } else {
-    letterPoints =+ 1;
+    letterPoints + 1;
   }
 }
   function scrabbleScore(word){
