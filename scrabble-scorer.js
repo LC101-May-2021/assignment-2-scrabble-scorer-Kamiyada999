@@ -42,10 +42,16 @@ function initialPrompt() {
 
 function simpleScore(word){
    word = word.toUpperCase();
+   let normalPoints = 0;
   simpleScoreArray = word.split('');
-  letterPoints = simpleScoreArray.length;
-  return letterPoints;
+  for (let i = 0; i < word.length; i++) {
+    normalPoints++;
+  }
+  return normalPoints;
 }
+ /* letterPoints = simpleScoreArray.length;
+  return letterPoints;*/
+
 
 function vowelBonusScore(word){
    word = word.toUpperCase();
@@ -53,10 +59,11 @@ function vowelBonusScore(word){
   letterPoints = 0;
   for (let i = 0; i < word.length; i++)
   if (word[i] === "A" || "E" || "I" || "O" || "U") {
-    letterPoints + 3;
+    letterPoints  = letterPoints + 3;
   } else {
-    letterPoints + 1;
+    letterPoints = letterPoints + 1;
   }
+  return letterPoints;
 }
   function scrabbleScore(word){
   word = word.toLowerCase();
@@ -89,7 +96,7 @@ const scoringAlgorithms = [
 
 
 function scorerPrompt() {
-  console.log("Which scoring algorithms would you like to use?\n0-Simple: One point per character\n1- Vowel Bonus: Vowels are worth 3 points\n2- Scrabble: Uses scrabble point system\nEnter 0,1, or 2: ");
+  console.log("Which scoring algorithms would you like to use?\n0-Simple: One point per character\n1- Vowel Bonus: Vowels are worth 3 points\n2- Scrabble: Uses scrabble point system\nEnter 0, 1, or 2: ");
   if(userInput === "0") {
     return simpleScore
   }
